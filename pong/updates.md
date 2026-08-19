@@ -4,3 +4,5 @@ Imma start writing something like this cause I thought I needed some form of dia
 Wrote this on the 19th but this progress was 17th.
 
 2026|08|19
+I'm about to be done. I only have the ai to worry about tomorrow, actually later cause
+it's the 20th now 00.47. I just need to make an ai that can adjust itself then I'll be done.

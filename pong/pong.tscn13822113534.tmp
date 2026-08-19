@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cbrve2j7ssaiq"]
+
+[ext_resource type="PackedScene" uid="uid://cv6r2wbfv4e8f" path="res://paddle.tscn" id="1_8w31r"]
+[ext_resource type="Script" uid="uid://csoore4xe03yy" path="res://paddle_ai.gd" id="2_pkvn5"]
+[ext_resource type="PackedScene" uid="uid://bxevymji3t5c0" path="res://ball.tscn" id="3_pkvn5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2l6y"]
+size = Vector2(1152, 26)
+
+[node name="pong" type="Node" unique_id=1697908564]
+
+[node name="background" type="Control" parent="." unique_id=1040852788]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="background" unique_id=1805004136]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="bounds" type="StaticBody2D" parent="." unique_id=905438973]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bounds" unique_id=1273211395]
+position = Vector2(576, 3)
+shape = SubResource("RectangleShape2D_t2l6y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bounds" unique_id=1626084423]
+position = Vector2(576, 648)
+shape = SubResource("RectangleShape2D_t2l6y")
+
+[node name="ColorRect" type="ColorRect" parent="bounds" unique_id=1333702676]
+offset_top = -8.0
+offset_right = 1152.0
+offset_bottom = 16.0
+color = Color(1.4439225e-06, 0, 0.58875334, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="bounds" unique_id=1876482629]
+offset_top = 636.0
+offset_right = 1152.0
+offset_bottom = 660.0
+color = Color(1.4439225e-06, 0, 0.58875334, 1)
+
+[node name="paddle" parent="." unique_id=711015074 groups=["paddles"] instance=ExtResource("1_8w31r")]
+position = Vector2(88, 328)
+
+[node name="paddle_ai" parent="." unique_id=730262267 groups=["paddles"] instance=ExtResource("1_8w31r")]
+position = Vector2(1056, 328)
+script = ExtResource("2_pkvn5")
+
+[node name="ball" parent="." unique_id=269967717 instance=ExtResource("3_pkvn5")]
+position = Vector2(576, 320)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2102970082]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="ball" method="_on_visible_on_screen_notifier_2d_screen_exited"]
