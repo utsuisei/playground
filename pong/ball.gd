@@ -7,8 +7,8 @@ const thrust_when_slow = 200
 const thrust_when_slow_x = 100
 const thrust_on_hit = 10000
 
-var start_x = position.x
-var start_y = position.y
+@onready var start_x = position.x
+@onready var start_y = position.y
 
 signal hit
 
@@ -46,3 +46,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			state.apply_force(Vector2(linear_x_normal * thrust_on_hit, collider.passed_velocity_y * 40))
 			
 			hit.emit(collider.passed_name)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	position = Vector2(start_x, start_y)

@@ -13,8 +13,11 @@ func _on_ball_hit(paddle: String) -> void:
 		score_ai.text = str(score_ai.score)
 
 
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	print("shit")
-	$ball.position = $ball.default_x
-	$ball.position = $ball.default_y
-	$ball.random_start_angle()
+func _on_punisher_body_entered(body: Ball) -> void:
+	score.score -= 1
+	score.text = str(score.score)
+
+
+func _on_punisher_2_body_entered(body: Node2D) -> void:
+	score_ai.score -= 1
+	score_ai.text = str(score_ai.score)
