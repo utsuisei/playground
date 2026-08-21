@@ -1,18 +1,13 @@
 [gd_scene format=3 uid="uid://bxevymji3t5c0"]
 
 [ext_resource type="Script" uid="uid://cr54hg1hwpknt" path="res://ball.gd" id="1_x8fbi"]
+[ext_resource type="Texture2D" uid="uid://dvpnl2jgqq1m0" path="res://ball.svg" id="2_41u45"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4opyw"]
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2l6y"]
 radius = 8.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20eyt"]
-albedo_color = Color(0.59488773, 0.020058852, 0.31676713, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_t2l6y"]
-material = SubResource("StandardMaterial3D_20eyt")
 
 [node name="ball" type="RigidBody2D" unique_id=269967717]
 collision_layer = 2
@@ -26,7 +21,7 @@ script = ExtResource("1_x8fbi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265678398]
 shape = SubResource("CircleShape2D_t2l6y")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=186615018]
-position = Vector2(9.536743e-07, 2.861023e-06)
-scale = Vector2(16.018145, 16)
-mesh = SubResource("SphereMesh_t2l6y")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1228195000]
+position = Vector2(-6.103515e-07, 0.06640673)
+scale = Vector2(0.159, 0.16)
+texture = ExtResource("2_41u45")

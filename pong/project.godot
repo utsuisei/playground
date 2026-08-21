@@ -8,17 +8,47 @@
 
 config_version=5
 
+[accessibility]
+
+general/accessibility_support=2
+
 [application]
 
 config/name="pong"
+config/description="A pong game with a trash ai."
+config/version="1.0"
 run/main_scene="uid://cbrve2j7ssaiq"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
+config/windows_native_icon="res://pong.ico"
+
+[audio]
+
+driver/driver="Dummy"
+
+[debug]
+
+settings/stdout/verbose_stdout=true
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/inferred_declaration=1
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+gdscript/warnings/unsafe_cast=1
+gdscript/warnings/unsafe_call_argument=1
+gdscript/warnings/return_value_discarded=1
+gdscript/warnings/missing_await=1
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[filesystem]
+
+import/fbx2gltf/enabled=false
+import/blender/enabled=false
 
 [input]
 
@@ -43,10 +73,24 @@ ai_down={
 ]
 }
 
-[physics]
+[input_devices]
 
-3d/physics_engine="Jolt Physics"
+pen_tablet/driver.windows="dummy"
+
+[internationalization]
+
+rendering/text_driver="ICU / HarfBuzz / Graphite (Built-in)"
+
+[navigation]
+
+2d/navigation_engine="Dummy"
+3d/navigation_engine="Dummy"
 
 [rendering]
 
-rendering_device/driver.windows="d3d12"
+rendering_device/fallback_to_vulkan=false
+rendering_device/fallback_to_d3d12=false
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+shader_compiler/shader_cache/enabled=false
+shader_compiler/shader_cache/strip_debug=true

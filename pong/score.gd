@@ -1,3 +1,4 @@
+class_name Score
 extends Label
 
-var score = 0
+var score: int = 0

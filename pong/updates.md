@@ -8,4 +8,12 @@ I'm about to be done. I only have the ai to worry about tomorrow, actually later
 it's the 20th now 00.47. I just need to make an ai that can adjust itself then I'll be done.
 
 2026|08|20
-I think I'm done now. 固着するつもりしない. I'll move on to other works. I coded the ai terribly tho.
+I think I'm done now. 固着するつもりしない. I'll move on to other works. I coded the ai 
+terribly tho.
+
+2026|08\21
+I hope this is truly the last entry here. I made an executable, after much struggle with
+compiling for windows. Tho it really is the StandardMaterial3D, SphereMesh, etc. class not
+being found on running the app. I still don't know which options I unknowingly disabled
+while cofiguring the custom engine compilation settings or the scons args that's causing the
+error. I ended up using Sprite2D.
